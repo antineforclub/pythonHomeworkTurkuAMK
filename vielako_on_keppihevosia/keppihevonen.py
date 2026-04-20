@@ -35,6 +35,12 @@ class Keppihevonen:
     def kasva_sentti(self):
         """Kasvattaa keppihevosen kokoa yhden senttimetrin."""
         self.__pituus = self.__pituus + 0.01
+    
+    def tallenna_tiedostoon(self, avattu_tied):
+        assert not avattu_tied.closed
+        assert avattu_tied.writable()
 
+        rivi = self.__nimi + ";" + str(self.__pituus) + ";" + str(self.__onKova) + "\n"
+        avattu_tied.write(rivi)
 
 

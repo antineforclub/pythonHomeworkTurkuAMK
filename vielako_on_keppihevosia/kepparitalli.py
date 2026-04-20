@@ -2,14 +2,14 @@
 class Kepparitalli:
 
     def __init__(self, tallin_nimi, kepparimaksimi):
-        """Alustaa uuden tallin tyhjäksi ja lailliseen tilaan.
+        """Alustaa uuden tallin tyhjäksi ja lailliseen tilaan."""
         self.__nimi = tallin_nimi
         self.__paikkojen_max_lkm = kepparimaksimi
         self.__kepparit = []
 
  
     def tallissa_tilaa(self):
-        """Onko tallissa tilaa?
+        """Onko tallissa tilaa?"""
         return len(self.__kepparit) < self.__paikkojen_max_lkm
 
 
