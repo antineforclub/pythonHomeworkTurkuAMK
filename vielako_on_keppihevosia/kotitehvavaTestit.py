@@ -32,9 +32,17 @@ def test4():
     f = "task4.txt"
     t1.tallenna_tiedostoon(f)
 
+def test5():
+    print("Task 5...")
+    talli = Kepparitalli.lue_tiedostosta("task5.txt")
+    print(talli.anna_nimi(), talli.anna_maksimi())
+    talli.elämöi()
+
 
 # test2()
 
 # test3()
 
-test4()
+# test4()
+
+test5()

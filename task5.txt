@@ -1,0 +1,6 @@
+Turku F-ryhmä;67
+Ronaldo;0.52;True
+Messi;0.09;False
+Mbappe;0.99;True
+Buffon;0.76;False
+Akinfeev;0.67;True

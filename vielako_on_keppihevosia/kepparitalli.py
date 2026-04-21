@@ -1,3 +1,4 @@
+from keppihevonen import Keppihevonen
 
 class Kepparitalli:
 
@@ -6,7 +7,12 @@ class Kepparitalli:
         self.__nimi = tallin_nimi
         self.__paikkojen_max_lkm = kepparimaksimi
         self.__kepparit = []
+    
+    def anna_nimi(self):
+        return self.__nimi
 
+    def anna_maksimi(self):
+        return self.__paikkojen_max_lkm
  
     def tallissa_tilaa(self):
         """Onko tallissa tilaa?"""
@@ -33,5 +39,27 @@ class Kepparitalli:
         for horse in self.__kepparit:
             horse.tallenna_tiedostoon(tiedosto)
         tiedosto.close()
+
+    @staticmethod
+    def lue_tiedostosta(tiedoston_nimi):
+        tiedosto = open(tiedoston_nimi, "r")
+
+        rivi = tiedosto.readline()
+        rivi = rivi.strip()
+        osat = rivi.split(";")
+
+        talli = Kepparitalli(osat[0], int(osat[1]))
+
+        horse = Keppihevonen.lue_tiedostosta(tiedosto)
+        while horse is not None:
+            talli.lisää(horse)
+            horse = Keppihevonen.lue_tiedostosta(tiedosto)
+
+        tiedosto.close()
+        return talli 
+    
+        
+
+            
 
  

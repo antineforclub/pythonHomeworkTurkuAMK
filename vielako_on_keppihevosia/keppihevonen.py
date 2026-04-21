@@ -49,6 +49,8 @@ class Keppihevonen:
         assert avattu_tied.readable()
 
         rivi = avattu_tied.readline()
+        if rivi == "":
+            return None
         rivi = rivi.strip()
         osat = rivi.split(";")
 
