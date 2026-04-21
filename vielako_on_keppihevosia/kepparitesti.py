@@ -52,7 +52,17 @@ def test2():
     horse.tallenna_tiedostoon(tiedosto)
     tiedosto.close()
 
-test2()
+def test3():
+    print("Task 3...")
+    tiedosto = open("task3.txt", "r")
+    horse = Keppihevonen.lue_tiedostosta(tiedosto)
+    print(horse)
+    tiedosto.close()
+
+
+# test2()
+
+test3()
 
 # testaa_hevosia()
 

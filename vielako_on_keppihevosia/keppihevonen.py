@@ -43,4 +43,20 @@ class Keppihevonen:
         rivi = self.__nimi + ";" + str(self.__pituus) + ";" + str(self.__onKova) + "\n"
         avattu_tied.write(rivi)
 
+    @staticmethod
+    def lue_tiedostosta(avattu_tied):
+        assert not avattu_tied.closed
+        assert avattu_tied.readable()
+
+        rivi = avattu_tied.readline()
+        rivi = rivi.strip()
+        osat = rivi.split(";")
+
+        pituus = float(osat[1])
+        onKova = (osat[2] == "True")
+        newHorse = Keppihevonen(osat[0], pituus, onKova)
+
+        return newHorse
+    
+
 
