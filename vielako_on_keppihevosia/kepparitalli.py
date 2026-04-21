@@ -26,7 +26,12 @@ class Kepparitalli:
         for hepo in self.__kepparit:
             print(hepo)
 
-            
-
+    def tallenna_tiedostoon(self, tiedoston_nimi):
+        tiedosto = open(tiedoston_nimi, "w")
+        rivi = self.__nimi + ";" + str(self.__paikkojen_max_lkm) + "\n"
+        tiedosto.write(rivi)
+        for horse in self.__kepparit:
+            horse.tallenna_tiedostoon(tiedosto)
+        tiedosto.close()
 
  
